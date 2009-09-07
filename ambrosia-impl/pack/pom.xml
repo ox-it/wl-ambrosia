@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!--
 /**********************************************************************************
  * $URL$
@@ -24,47 +23,36 @@
  * limitations under the License.
  *
  **********************************************************************************/
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
-
-	<parent>
-		<artifactId>ambrosia</artifactId>
-		<groupId>org.etudes.ambrosia</groupId>
-		<version>1.2</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
-
-	<name>etudes-ambrosia-pack</name>
-	<groupId>org.etudes.ambrosia</groupId>
-	<artifactId>etudes-ambrosia-pack</artifactId>
-	<packaging>sakai-component</packaging>
-
-	<properties>
-		<deploy.target>components</deploy.target>
-	</properties>
-
-	<dependencies>
-
-		<dependency>
-			<groupId>org.etudes.ambrosia</groupId>
-			<artifactId>etudes-ambrosia-impl</artifactId>
-			<version>${ambrosia.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.etudes.ambrosia</groupId>
-			<artifactId>etudes-ambrosia-util</artifactId>
-			<version>${ambrosia.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.sakaiproject</groupId>
-			<artifactId>sakai-util</artifactId>
-			<version>${sakai.version}</version>
-		</dependency>
-
-	</dependencies>
-
+--><project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>ambrosia</artifactId>
+    <groupId>org.etudes.ambrosia</groupId>
+    <version>1.2</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <name>etudes-ambrosia-pack</name>
+  <groupId>org.etudes.ambrosia</groupId>
+  <artifactId>etudes-ambrosia-pack</artifactId>
+  <packaging>sakai-component</packaging>
+  <properties>
+    <deploy.target>components</deploy.target>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.sakaiproject.kernel</groupId>
+      <artifactId>sakai-kernel-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.etudes.ambrosia</groupId>
+      <artifactId>etudes-ambrosia-impl</artifactId>
+      <version>${ambrosia.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.etudes.ambrosia</groupId>
+      <artifactId>etudes-ambrosia-util</artifactId>
+      <version>${ambrosia.version}</version>
+    </dependency>
+<!--org.sakaiprojectsakai-util${sakai.version}-->
+  </dependencies>
 </project>

@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!--
 /**********************************************************************************
  * $URL$
@@ -24,47 +23,37 @@
  * limitations under the License.
  *
  **********************************************************************************/
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
-
-	<!-- for stand-alone building under test-center -->
-	<parent>
-		<groupId>org.etudes.test-center</groupId>
-		<artifactId>test-center</artifactId>
-		<version>1.2</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
-
-	<!-- for embedded building withing sakai -->
-	<!-- Note: set the version to the Sakai version you are using -->
-	<!--
+--><project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+<!-- for stand-alone building under test-center -->
+<!--  <parent>
+    <groupId>org.etudes.test-center</groupId>
+    <artifactId>test-center</artifactId>
+    <version>1.2</version>
+  </parent>-->
+<!-- for embedded building withing sakai -->
+<!-- Note: set the version to the Sakai version you are using -->
 	<parent>
 		<artifactId>base</artifactId>
 		<groupId>org.sakaiproject</groupId>
-		<version>2.5.3</version>
+		<version>2.6.0RC1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	-->
 
-	<name>Ambrosia</name>
-	<groupId>org.etudes.ambrosia</groupId>
-	<artifactId>ambrosia</artifactId>
-	<version>1.2</version>
-	<packaging>pom</packaging>
-
-	<properties>
-		<ambrosia.version>1.2</ambrosia.version>
-		<sakai.commons.logging.version>1.0.4</sakai.commons.logging.version>
-	</properties>
-
-	<modules>
-		<module>ambrosia-api/api</module>
-		<module>ambrosia-impl/impl</module>
-		<module>ambrosia-impl/pack</module>
-		<module>ambrosia-util/util</module>
-		<module>ambrosia-library/lib</module>
-	</modules>
-
+  <name>Ambrosia</name>
+  <groupId>org.etudes.ambrosia</groupId>
+  <artifactId>ambrosia</artifactId>
+  <version>1.2</version>
+  <packaging>pom</packaging>
+  <properties>
+    <ambrosia.version>1.2</ambrosia.version>
+    <sakai.commons.logging.version>1.0.4</sakai.commons.logging.version>
+  </properties>
+  <modules>
+    <module>ambrosia-api/api</module>
+    <module>ambrosia-impl/impl</module>
+    <module>ambrosia-impl/pack</module>
+    <module>ambrosia-util/util</module>
+    <module>ambrosia-library/lib</module>
+  </modules>
 </project>

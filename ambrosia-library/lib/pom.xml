@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!--
 /**********************************************************************************
  * $URL$
@@ -24,21 +23,16 @@
  * limitations under the License.
  *
  **********************************************************************************/
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
-
-	<parent>
-		<artifactId>ambrosia</artifactId>
-		<groupId>org.etudes.ambrosia</groupId>
-		<version>1.2</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
-
-	<name>ambrosia_library</name>
-	<groupId>org.etudes.ambrosia</groupId>
-	<artifactId>ambrosia_library</artifactId>
-	<packaging>war</packaging>
-
+--><project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>ambrosia</artifactId>
+    <groupId>org.etudes.ambrosia</groupId>
+    <version>1.2</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <name>ambrosia_library</name>
+  <groupId>org.etudes.ambrosia</groupId>
+  <artifactId>ambrosia_library</artifactId>
+  <packaging>war</packaging>
 </project>
