@@ -29,7 +29,7 @@
     <artifactId>ambrosia</artifactId>
     <groupId>org.etudes.ambrosia</groupId>
     <version>1.2</version>
-    <relativePath>../pom.xml</relativePath>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
   <name>etudes-ambrosia-impl</name>
   <groupId>org.etudes.ambrosia</groupId>
