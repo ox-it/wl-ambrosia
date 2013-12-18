@@ -259,6 +259,26 @@ public class UiHtmlEdit extends UiComponent implements HtmlEdit
 			// response.println("<span class=\"reqStarInline\">*</span>");
 		}
 
+		// our status object for enabling the editor
+		if (!readOnly && this.optional)
+		{
+			String docsPath = context.getDocsPath();
+			context.addScript("var htmlComponent_" + id + "=new Object();\n");
+			context.addScript("htmlComponent_" + id + ".enabled=false;\n");
+			if (this.optional)
+			{
+				context.addScript("htmlComponent_" + id + ".renderedId=\"rendered_" + id + "\";\n");
+				context.addScript("htmlComponent_" + id + ".toggleId=\"toggle_" + id + "\";\n");
+			}
+			else
+			{
+				context.addScript("htmlComponent_" + id + ".renderedId=null;\n");
+				context.addScript("htmlComponent_" + id + ".toggleId=null;\n");
+			}
+			context.addScript("htmlComponent_" + id + ".textAreaId=\"" + id + "\";\n");
+			context.addScript("htmlComponent_" + id + ".mode=\"" + this.size.toString() + "\";\n");
+		}
+
 		// the title (if defined), and the edit icon
 		if ((this.titleMessage != null) || (!readOnly && this.optional))
 		{
@@ -289,26 +309,12 @@ public class UiHtmlEdit extends UiComponent implements HtmlEdit
 		// the edit textarea (if not optional)
 		if (!(!readOnly && this.optional))
 		{
-			// make sure the context.getDocsPath() exists
-			assureDocsPath(context);
-
-			response.println("<textarea " + (this.optional ? "style=\"display:none; position:absolute; top:0px; left:0px;\"" : "") + " id=\"" + id
-					+ "\" name=\"" + id + "\" " + (readOnly ? " disabled=\"disabled\"" : "") + ">");
+			response.println("<textarea "
+					+ (this.optional ? "style=\"display:none; position:absolute; top:0px; left:0px;\"" : (" class=\"ambrosiaHtmlEdit_"
+							+ this.size.toString() + "\"")) + " id=\"" + id + "\" name=\"" + id + "\" " + (readOnly ? " disabled=\"disabled\"" : "")
+					+ ">");
 			response.print(Validator.escapeHtmlTextarea(value));
 			response.println("</textarea>");
-			response.println("<script type=\"text/javascript\" defer=\"1\">sakai.editor.collectionId =\"" + context.getDocsPath() + "\";");
-			response.println("if (enableBrowse == false)");
-			response.println("{");
-			response.println("function config(){}");
-			response.println("config.prototype.disableBrowseServer=true;");
-			response.println("sakai.editor.launch('" + id + "',new config(),getWidth('.ambrosiaHtmlEditSize_" + this.size.toString()
-					+ "'),getHeight('.ambrosiaHtmlEditSize_" + this.size.toString() + "'));");
-			response.println("}");
-			response.println("else {");
-			response.println("sakai.editor.launch('" + id + "',true,getWidth('.ambrosiaHtmlEditSize_" + this.size.toString()
-					+ "'),getHeight('.ambrosiaHtmlEditSize_" + this.size.toString() + "'));");
-			response.println("}");
-			response.println("</script>");
 		}
 
 		// for optional, a hidden field to hold the value
@@ -351,7 +357,6 @@ public class UiHtmlEdit extends UiComponent implements HtmlEdit
 			// add the field name / id to the focus path
 			context.addFocusId(id);
 		}
-		response.println("<div class=\"ckeditorGap_" + this.size.toString() + "\"></div>");
 
 		return true;
 	}
