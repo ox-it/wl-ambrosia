@@ -493,15 +493,15 @@ Gap
 }
 .ckeditorGap_small
 {
-  height:15em;
+  height:18em;
 }
 .ckeditorGap_full
 {
-  height:10em;
+  height:14em;
 }
 .ckeditorGap_tall
 {
-  height:10em;
+  height:14em;
 }
 
 /*
@@ -570,6 +570,7 @@ size for "full" html edit.
 {
 	width: 680px;
 	height: 120px;
+    margin-top: 1em;
 }
 
 /*
@@ -579,6 +580,7 @@ size for "tall" html edit.
 {
 	width: 680px;
 	height: 231px;
+    margin-top: 1em;
 }
 
 a.ambrosiaUiHot:link,
